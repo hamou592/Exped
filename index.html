@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPED - Visites Virtuelles 360°</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="exped.css">
+    <link  rel="stylesheet"  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://placehold.co/40x40" alt="Logo">
+            <span>EXPED</span>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Accueil</a></li>
+                <li class="has-submenu">
+                    <a href="#">Services</a>
+                    <ul class="submenu">
+                        <li><a href="#">Créer une visit</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Tarifs</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="login">Se connecter</button>
+            <button class="register">S'enregistrer</button>
+        </div>
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">✖</button>
+        <div class="menu">
+            <div class="menu-item"><a href="#">Accueil</a></div>
+            <div class="menu-item"><a href="#">À propos</a></div>
+            <div class="menu-item"><a href="#">Découverte</a></div>
+            <div class="has-submenu">
+                <a href="#" onclick="toggleDropdown(event)">Services</a>
+                <ul class="submenu">
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">Consulting</a></li>
+                </ul>
+            </div>
+            <div class="menu-item"><a href="#">Créer une visite</a></div>
+            <div class="menu-item"><a href="#">À qui</a></div>
+            <div class="menu-item"><a href="#">Tarifs</a></div>
+            <div class="menu-item"><a href="#">Avis</a></div>
+            <div class="menu-item"><a href="#">FAQs</a></div>
+            <div class="menu-item"><a href="#">Contact</a></div>
+            <div class="auth-buttons">
+              <button class="login">Se connecter</button>
+              <button class="register">S'enregistrer</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Hero Section with Video -->
+    <section class="hero">
+        <iframe id="vt_iframe_b6d767d2f8ed5d21a44b0e5886680cb9" 
+          allow="accelerometer; camera; display-capture; fullscreen; geolocation; gyroscope; magnetometer; microphone; midi; xr-spatial-tracking;" 
+          width="100%" height="100%" 
+          frameborder="0" scrolling="no" 
+          marginheight="0" marginwidth="0" 
+          src="https://vr.expedgis.com/viewer/index.php?code=b6d767d2f8ed5d21a44b0e5886680cb9">
+        </iframe>
+
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Explorez l'Immersion Virtuelle</h1>
+            <p>Transformez votre façon de présenter vos espaces avec nos visites virtuelles 360°. Notre technologie avancée permet une exploration immersive et interactive, idéale pour l'immobilier, l'architecture, et le tourisme. Offrez à vos clients une expérience unique et mémorable qui dépasse les limites de la présentation traditionnelle.</p>
+            <button class="cta-button">Commencer maintenant</button>
+        </div>
+    </section>
+<!-- Previous code remains the same until the hero section -->
+<section class="about-virtual-tour">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="https://placehold.co/600x400" alt="Virtual Tour Example">
+        </div>
+        <div class="about-content">
+            <h2>Qu'est-ce Qu'une Visite Virtuelle ?</h2>
+            <p>Les visites virtuelles, également appelées visites immersives, sont un ensemble de photos reliées entre elles afin que le visiteur puisse profiter pleinement de l'expérience « Immersive ». Beaucoup de personnes considèrent les visites virtuelles comme quelque chose de long et coûteux à créer, Klapty prouve le contraire. Notre objectif est de rendre les visites virtuelles accessibles à tous et dans le monde entier. Toutes les visites Klapty peuvent être visualisées sur tous types d'appareils en un simple clic: MAC, PC, Smartphone (iOs et Android), Tablette et masque de réalité virtuelle (VR).</p>
+        </div>
+    </div>
+</section>
+<!-- Add this after the hero section -->
+<section class="discover">
+        <div class="discover-content">
+            <h2>Découvrez les visites virtuelles</h2>
+            <p>Explorez le monde en pleine immersion et cherchez une catégorie spécifique de visites virtuelles. Achetez ou louez votre prochaine propriété, bateau, voiture, avion et location saisonnière. Découvrez les musées, les vues aériennes, l'art, les créations 3D, les chantiers en construction et les salons. Trouvez tous les commerces près de chez vous: Boutiques, écoles, showrooms, bureaux et lieux de détente.</p>
+        </div>
+        <div class="cards-container">
+            <div class="card">
+                <!-- <iframe
+                    id="vt_iframe_b6d767d2f8ed5d21a44b0e5886680cb9"
+                    allow="accelerometer; camera; display-capture; fullscreen; geolocation; gyroscope; magnetometer; microphone; midi; xr-spatial-tracking;"
+                    src="https://vr.expedgis.com/viewer/index.php?code=b6d767d2f8ed5d21a44b0e5886680cb9">
+                </iframe> -->
+                <iframe id="vt_iframe_b6d767d2f8ed5d21a44b0e5886680cb9" allow="accelerometer; camera; display-capture; fullscreen; geolocation; gyroscope; magnetometer; microphone; midi; xr-spatial-tracking;" width="100%" height="600px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://vr.expedgis.com/viewer/index.php?code=b6d767d2f8ed5d21a44b0e5886680cb9"></iframe>
+            </div>
+            <div class="card">
+                <!-- <iframe
+                    id="vt_iframe_b6d767d2f8ed5d21a44b0e5886680cb9"
+                    allow="accelerometer; camera; display-capture; fullscreen; geolocation; gyroscope; magnetometer; microphone; midi; xr-spatial-tracking;"
+                    src="https://vr.expedgis.com/viewer/index.php?code=b6d767d2f8ed5d21a44b0e5886680cb9">
+                </iframe> -->
+                <iframe id="vt_iframe_b6d767d2f8ed5d21a44b0e5886680cb9" allow="accelerometer; camera; display-capture; fullscreen; geolocation; gyroscope; magnetometer; microphone; midi; xr-spatial-tracking;" width="100%" height="600px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://vr.expedgis.com/viewer/index.php?code=b6d767d2f8ed5d21a44b0e5886680cb9"></iframe>
+            </div>
+        </div>
+        <button class="recherexplorer">Explorer & Rechercher</button>
+    </section>
+
+  <section class="steps-section">
+    <h2 class="steps-title">Comment Créer Des Visites Virtuelles Sur EXPED ?</h2>
+    <div class="steps-container">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-info">
+            <span class="step-subtitle">ETAPE 1</span>
+            <h3 class="step-title">S’inscrire gratuitement</h3>
+          </div>
+          <span class="step-number">1</span>
+        </div>
+        <p class="step-description">
+          Rejoignez la révolution du design et du e-commerce. Un monde d'expériences immersives et d'opportunités de gains vous attend avec SnapVisite360.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-info">
+            <span class="step-subtitle">ETAPE 2</span>
+            <h3 class="step-title">Créez Vos Visites 360</h3>
+          </div>
+          <span class="step-number">2</span>
+        </div>
+        <p class="step-description">
+          Importez vos photos ou utilisez notre IA pour les générer en 360. Créez facilement des visites virtuelles interactives et intégrez des produits avec des liens d'affiliation directement dans la scène!
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-info">
+            <span class="step-subtitle">ETAPE 3</span>
+            <h3 class="step-title">Partager & Monétiser</h3>
+          </div>
+          <span class="step-number">3</span>
+        </div>
+        <p class="step-description">
+          Impressionnez vos clients avec des visites immersives et des produits intégrés. Partagez vos visites sur les réseaux sociaux ou sur votre site web et gagnez à chaque achat effectué via vos liens d'affiliation.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-info">
+            <span class="step-subtitle">ETAPE 4</span>
+            <h3 class="step-title">Analyser les Résultats</h3>
+          </div>
+          <span class="step-number">4</span>
+        </div>
+        <p class="step-description">
+          Suivez les performances de vos visites virtuelles grâce à nos outils d'analyse intégrés et optimisez vos campagnes pour de meilleurs résultats.
+        </p>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-info">
+            <span class="step-subtitle">ETAPE 5</span>
+            <h3 class="step-title">Augmenter vos Revenus</h3>
+          </div>
+          <span class="step-number">5</span>
+        </div>
+        <p class="step-description">
+          Maximisez vos profits en exploitant pleinement les fonctionnalités de SnapVisite360 pour attirer plus de clients et générer des ventes.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+<section id="services">
+    <h2>Ce Que Nous Offrons</h2>
+    <P class="head_text">Exped est la solution tout-en-un pour créer, gérer et partager des visites virtuelles</P>
+    <div class="content-box">
+            <div class="box">
+                <span class="material-symbols-sharp">menu_book</span>
+                <div class="informations">
+                    <h3>Online Booking</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti magnam fugit nemo repudiandae omnis officia.</p>
+                </div> 
+                
+            </div>
+            <div class="box">
+                <span class="material-symbols-sharp">military_tech</span>
+                <div class="informations">
+                    <h3>Qualified Doctors</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti magnam fugit nemo repudiandae omnis officia.</p>
+                </div> 
+                
+            </div>
+            <div class="box">
+                <span class="material-symbols-sharp">headset_mic</span>
+                <div class="informations">
+                    <h3>Private Support</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti magnam fugit nemo repudiandae omnis officia.</p>
+                </div> 
+                
+            </div>
+            <div class="box">
+                <span class="material-symbols-sharp">volunteer_activism</span>
+                <div class="informations">
+                    <h3>Well Carred</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti magnam fugit nemo repudiandae omnis officia.</p>
+                </div> 
+                
+            </div>
+            <div class="box">
+                <span class="material-symbols-sharp">medical_services</span>
+                <div class="informations">
+                    <h3>Need Emergency</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti magnam fugit nemo repudiandae omnis officia.</p>
+                </div> 
+                
+            </div>
+            <div class="box">
+                <span class="material-symbols-sharp">all_inclusive</span>
+                <div class="informations">
+                    <h3>24 Hours Service</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti magnam fugit nemo repudiandae omnis officia.</p>
+                </div> 
+                
+            </div>
+    </div>
+</section>
+
+<section class="use-cases">
+    <h2>Qui A Besoin De Visites Virtuelles ?</h2>
+    <div class="cards-grid">
+        <div class="use-case-card">
+            <div class="card-image">
+                <img src="https://placehold.co/400x300" alt="Immobilier">
+            </div>
+            <h3>Immobilier</h3>
+            <p>Présentez vos biens immobiliers de manière immersive. Idéal pour les agences et les propriétaires.</p>
+        </div>
+
+        <div class="use-case-card">
+            <div class="card-image">
+                <img src="https://placehold.co/400x300" alt="Hôtellerie">
+            </div>
+            <h3>Hôtellerie</h3>
+            <p>Montrez vos chambres et installations aux futurs clients. Parfait pour les hôtels et résidences.</p>
+        </div>
+
+        <div class="use-case-card">
+            <div class="card-image">
+                <img src="https://placehold.co/400x300" alt="Musées">
+            </div>
+            <h3>Musées</h3>
+            <p>Offrez des visites virtuelles de vos expositions et collections. Idéal pour les musées et galeries.</p>
+        </div>
+
+        <div class="use-case-card">
+            <div class="card-image">
+                <img src="https://placehold.co/400x300" alt="Commerces">
+            </div>
+            <h3>Commerces</h3>
+            <p>Présentez votre espace commercial et vos produits. Parfait pour les boutiques et showrooms.</p>
+        </div>
+
+        <div class="use-case-card">
+            <div class="card-image">
+                <img src="https://placehold.co/400x300" alt="Éducation">
+            </div>
+            <h3>Éducation</h3>
+            <p>Faites découvrir vos établissements scolaires. Idéal pour les écoles et universités.</p>
+        </div>
+
+        <div class="use-case-card">
+            <div class="card-image">
+                <img src="https://placehold.co/400x300" alt="Événementiel">
+            </div>
+            <h3>Événementiel</h3>
+            <p>Capturez vos événements et lieux de réception. Parfait pour les salles et organisateurs.</p>
+        </div>
+
+        <div class="use-case-card">
+            <div class="card-image">
+                <img src="https://placehold.co/400x300" alt="Architecture">
+            </div>
+            <h3>Architecture</h3>
+            <p>Présentez vos projets architecturaux. Idéal pour les architectes et designers.</p>
+        </div>
+
+        <div class="use-case-card">
+            <div class="card-image">
+                <img src="https://placehold.co/400x300" alt="Tourisme">
+            </div>
+            <h3>Tourisme</h3>
+            <p>Mettez en valeur vos destinations touristiques. Parfait pour les offices de tourisme.</p>
+        </div>
+    </div>
+</section>
+
+    <section class="pricing-section">
+        <div class="section-header">
+            <h2>Pricing Plan</h2>
+            <p>List of our pricing packages</p>
+            <hr class="divider">
+        </div>
+
+        <div class="pricing-container">
+            <!-- Basic Plan -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3 class="card-title">Basic Plan</h3>
+                    <div class="price">29€<span>/month</span></div>
+                </div>
+                <hr class="card-divider">
+                <ul class="features">
+                    <li>5 Virtual Tours</li>
+                    <li>Basic Analytics</li>
+                    <li>24/7 Support</li>
+                    <li>Mobile Optimization</li>
+                </ul>
+                <button class="card-button">Choose Plan</button>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="pricing-card featured">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="card-title">Premium Plan</h3>
+                    <div class="price">59€<span>/month</span></div>
+                </div>
+                <hr class="card-divider">
+                <ul class="features">
+                    <li>15 Virtual Tours</li>
+                    <li>Advanced Analytics</li>
+                    <li>Priority Support</li>
+                    <li>Mobile Optimization</li>
+                    <li>Custom Branding</li>
+                </ul>
+                <button class="card-button">Choose Plan</button>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="card-title">Pro Plan</h3>
+                    <div class="price">99€<span>/month</span></div>
+                </div>
+                <hr class="card-divider">
+                <ul class="features">
+                    <li>Unlimited Virtual Tours</li>
+                    <li>Premium Analytics</li>
+                    <li>24/7 Priority Support</li>
+                    <li>Mobile Optimization</li>
+                    <li>Custom Branding</li>
+                    <li>API Access</li>
+                </ul>
+                <button class="card-button">Choose Plan</button>
+            </div>
+        </div>
+    </section>
+
+
+    
+<section id="rates" class="swiper mySwiper">
+    <h2>WHAT OUR PATIENTS SAY</h2>
+    <P>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum unde deserunt cumque, quasi possimus</P>
+    <div class="content swiper-wrapper">
+        <div class="faq swiper-slide">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae vero nemo tempore neque corrupti magnam!</p>
+            <div class="informations">
+                <img src="https://placehold.co/100x100">
+                <div class="name">
+                    <h3>KHOULOUD AYA</h3>
+                    <h5>★★★★★</h5>
+                </div>
+            </div>
+        </div>
+        <div class="faq swiper-slide">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae vero nemo tempore neque corrupti magnam!</p>
+            <div class="informations">
+                <img src="https://placehold.co/100x100">
+                <div class="name">
+                    <h3>AICHA SADOUK</h3>
+                    <h5>★★★★★</h5>
+                </div>
+            </div>
+        </div>
+        <div class="faq swiper-slide">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae vero nemo tempore neque corrupti magnam!</p>
+            <div class="informations">
+                <img src="https://placehold.co/100x100">
+                <div class="name">
+                    <h3>YASSER HALAOUI</h3>
+                    <h5>★★★★★</h5>
+                </div>
+            </div>
+        </div>
+        <div class="faq swiper-slide">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae vero nemo tempore neque corrupti magnam!</p>
+            <div class="informations">
+                <img src="https://placehold.co/100x100">
+                <div class="name">
+                    <h3>CHEIMA ANNABI</h3>
+                    <h5>★★★★★</h5>
+                </div>
+            </div>
+        </div>
+        <div class="faq swiper-slide">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae vero nemo tempore neque corrupti magnam!</p>
+            <div class="informations">
+                <img src="https://placehold.co/100x100">
+                <div class="name">
+                    <h3>YOUNESS YASSER</h3>
+                    <h5>★★★★★</h5>
+                </div>
+            </div>
+        </div>
+        <div class="faq swiper-slide">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae vero nemo tempore neque corrupti magnam!</p>
+            <div class="informations">
+                <img src="https://placehold.co/100x100">
+                <div class="name">
+                    <h3>SALAH CHAIBIA</h3>
+                    <h5>★★★★★</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="swiper-pagination"></div>
+</section>
+
+    <section class="faq-section">
+        <h2>Questions Fréquentes</h2>
+    
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    Comment fonctionne une visite virtuelle 360° ?
+                    <span class="arrow">&#9662;</span>
+                </div>
+                <div class="faq-answer">
+                    Une visite virtuelle 360° est une série de photos panoramiques interconnectées qui permettent aux utilisateurs de naviguer virtuellement dans un espace. Les visiteurs peuvent se déplacer d'un point à l'autre et regarder dans toutes les directions comme s'ils étaient physiquement présents.
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    Combien de temps prend une séance de capture ?
+                    <span class="arrow">&#9662;</span>
+                </div>
+                <div class="faq-answer">
+                    La durée de la capture dépend de la taille de l'espace. En moyenne, pour un appartement de 100m², comptez environ 1-2 heures. Nous nous assurons de capturer chaque détail avec précision.
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    Quel est le délai de livraison ?
+                    <span class="arrow">&#9662;</span>
+                </div>
+                <div class="faq-answer">
+                    Nous livrons généralement les visites virtuelles dans les 48-72 heures suivant la capture. Pour les projets urgents, nous proposons également un service express avec livraison sous 24 heures.
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    Les visites virtuelles sont-elles compatibles mobile ?
+                    <span class="arrow">&#9662;</span>
+                </div>
+                <div class="faq-answer">
+                    Oui, toutes nos visites virtuelles sont parfaitement optimisées pour les appareils mobiles. Elles fonctionnent sur tous les smartphones et tablettes, offrant une expérience fluide et immersive.
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    Puis-je intégrer la visite sur mon site web ?
+                    <span class="arrow">&#9662;</span>
+                </div>
+                <div class="faq-answer">
+                    Absolument ! Nous fournissons un code d'intégration simple que vous pouvez ajouter à votre site web. La visite s'intègre parfaitement et peut être personnalisée pour correspondre à votre design.
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+
+    <section class="blog-section">
+        <div class="blog-header">
+            <h2>Dernières Actualités</h2>
+            <p>Découvrez nos derniers articles</p>
+            <hr class="divider">
+        </div>
+    
+        <div class="blog-slider">
+            <div class="blog-track">
+                <!-- Blog Card 1 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://placehold.co/400x250');">
+                        <div class="blog-tags">
+                            <button class="tag">Stratégie</button>
+                            <button class="tag">Marketing</button>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Comment optimiser vos visites virtuelles</h3>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-user"></i>
+                                <span>By Our Team</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>15 Feb 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-comments"></i>
+                                <span>12</span>
+                            </div>
+                        </div>
+                        <p class="blog-description">
+                            Découvrez les meilleures pratiques pour optimiser vos visites virtuelles et maximiser leur impact auprès de votre audience.
+                        </p>
+                        <hr>
+                        <a href="#" class="read-more">Lire la suite</a>
+                    </div>
+                </div>
+    
+                <!-- Blog Card 2 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://placehold.co/400x250');">
+                        <div class="blog-tags">
+                            <button class="tag">Stratégie</button>
+                            <button class="tag">Marketing</button>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Les tendances de la visite virtuelle en 2024</h3>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-user"></i>
+                                <span>By Our Team</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>10 Feb 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-comments"></i>
+                                <span>8</span>
+                            </div>
+                        </div>
+                        <p class="blog-description">
+                            Explorez les dernières innovations et tendances dans le domaine de la visite virtuelle et leur impact sur l'immobilier.
+                        </p>
+                        <hr>
+                        <a href="#" class="read-more">Lire la suite</a>
+                    </div>
+                </div>
+    
+                <!-- Blog Card 3 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://placehold.co/400x250');">
+                        <div class="blog-tags">
+                            <button class="tag">Stratégie</button>
+                            <button class="tag">Marketing</button>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>5 astuces pour une visite virtuelle réussie</h3>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-user"></i>
+                                <span>By Our Team</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>5 Feb 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-comments"></i>
+                                <span>15</span>
+                            </div>
+                        </div>
+                        <p class="blog-description">
+                            Apprenez les secrets pour créer des visites virtuelles engageantes qui convertissent vos prospects en clients.
+                        </p>
+                        <hr>
+                        <a href="#" class="read-more">Lire la suite</a>
+                    </div>
+                </div>
+    
+                <!-- Blog Card 3 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://placehold.co/400x250');">
+                        <div class="blog-tags">
+                            <button class="tag">Stratégie</button>
+                            <button class="tag">Marketing</button>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>5 astuces pour une visite virtuelle réussie</h3>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-user"></i>
+                                <span>By Our Team</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>5 Feb 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-comments"></i>
+                                <span>15</span>
+                            </div>
+                        </div>
+                        <p class="blog-description">
+                            Apprenez les secrets pour créer des visites virtuelles engageantes qui convertissent vos prospects en clients.
+                        </p>
+                        <hr>
+                        <a href="#" class="read-more">Lire la suite</a>
+                    </div>
+                </div>
+    
+                <!-- Blog Card 3 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://placehold.co/400x250');">
+                        <div class="blog-tags">
+                            <button class="tag">Stratégie</button>
+                            <button class="tag">Marketing</button>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>5 astuces pour une visite virtuelle réussie</h3>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-user"></i>
+                                <span>By Our Team</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>5 Feb 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-comments"></i>
+                                <span>15</span>
+                            </div>
+                        </div>
+                        <p class="blog-description">
+                            Apprenez les secrets pour créer des visites virtuelles engageantes qui convertissent vos prospects en clients.
+                        </p>
+                        <hr>
+                        <a href="#" class="read-more">Lire la suite</a>
+                    </div>
+                </div>
+    
+                <!-- Blog Card 3 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://placehold.co/400x250');">
+                        <div class="blog-tags">
+                            <button class="tag">Stratégie</button>
+                            <button class="tag">Marketing</button>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>5 astuces pour une visite virtuelle réussie</h3>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-user"></i>
+                                <span>By Our Team</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>5 Feb 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-comments"></i>
+                                <span>15</span>
+                            </div>
+                        </div>
+                        <p class="blog-description">
+                            Apprenez les secrets pour créer des visites virtuelles engageantes qui convertissent vos prospects en clients.
+                        </p>
+                        <hr>
+                        <a href="#" class="read-more">Lire la suite</a>
+                    </div>
+                </div>
+    
+                <!-- Blog Card 3 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://placehold.co/400x250');">
+                        <div class="blog-tags">
+                            <button class="tag">Stratégie</button>
+                            <button class="tag">Marketing</button>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>5 astuces pour une visite virtuelle réussie</h3>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-user"></i>
+                                <span>By Our Team</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>5 Feb 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-comments"></i>
+                                <span>15</span>
+                            </div>
+                        </div>
+                        <p class="blog-description">
+                            Apprenez les secrets pour créer des visites virtuelles engageantes qui convertissent vos prospects en clients.
+                        </p>
+                        <hr>
+                        <a href="#" class="read-more">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-header">
+            <h2>CONTACTEZ-NOUS</h2>
+            <p>Avez-vous des questions?</p>
+            <hr class="divider">
+        </div>
+    
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Let's talk about your idea</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Votre téléphone" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Parlez-nous de votre projet" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Envoyer</button>
+                </form>
+            </div>
+    
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <!-- Location -->
+                <div class="info-item">
+                    <div class="info-header">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Notre emplacement</h4>
+                    </div>
+                    <p>123 Rue de la République, 75001 Paris, France</p>
+                </div>
+    
+                <!-- Phone -->
+                <div class="info-item">
+                    <div class="info-header">
+                        <i class="fas fa-phone"></i>
+                        <h4>Notre téléphone</h4>
+                    </div>
+                    <p>+33 1 23 45 67 89</p>
+                </div>
+    
+                <!-- Email -->
+                <div class="info-item">
+                    <div class="info-header">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Notre email</h4>
+                    </div>
+                    <p>contact@exped.com</p>
+                </div>
+    
+                <!-- Social Media -->
+                <div class="info-item">
+                    <div class="info-header">
+                        <i class="fas fa-share-alt"></i>
+                        <h4>Nos réseaux sociaux</h4>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <hr class="footer-divider">
+                <h3 class="Follow">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+    
+            <!-- Company Section -->
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Company History</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Blog Page</a></li>
+                </ul>
+            </div>
+    
+            <!-- Resources Section -->
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Leadership</a></li>
+                    <li><a href="#">Strategy</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">History</a></li>
+                </ul>
+            </div>
+    
+            <!-- Contact Info Section -->
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-globe"></i>
+                        <a href="https://www.exped.com">www.exped.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:contact@exped.com">contact@exped.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div>
+            <div class="copyright" style=" padding:0 12px;text-align: center; ">
+                © Copyright 2024. All Rights Reserved by EXPED
+            </div>
+        </div>
+    
+    </footer>
+    
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="exped.js">
+        
+    </script>
+    
+    
+</body>
+</html>
