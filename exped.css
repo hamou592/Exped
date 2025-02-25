@@ -1846,7 +1846,7 @@ grid-template-columns: repeat(2, 1fr);
 .discover .card {
     width: 100%; /* Full width on mobile */
     margin-bottom: 1rem;
-    width: 600px;
+    width: 550px;
 }
 .discover-content h2 {
     font-size: 2rem;
@@ -1949,6 +1949,11 @@ grid-template-columns: 1fr; /* 1 card per row */
 grid-template-columns: 1fr;
 }
 
+.discover .card {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 1rem;
+    width: 430px;
+}
   
 #services .content-box{
     padding:20px ;
@@ -2007,5 +2012,10 @@ footer .social-links{
 @media (max-width: 480px) {
     .step-card {
         flex: 0 0 100%;
+    }
+    .discover .card {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 1rem;
+        width: 370px;
     }
 }
