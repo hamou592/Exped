@@ -1795,6 +1795,10 @@ grid-template-columns: repeat(2, 1fr);
     font-size: 1.8rem;
     text-align: center;
     }
+    .use-cases .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1400px;
+    }
     
 }
 @media (max-width: 800px) {
@@ -1940,6 +1944,10 @@ font-size: 2rem;
 .steps-container {
 grid-template-columns: 1fr; /* 1 card per row */
 }
+.use-cases .cards-grid {
+grid-template-columns: repeat(2, 1fr);
+max-width: 1400px;
+}
 
 }
 
@@ -1961,6 +1969,10 @@ grid-template-columns: 1fr;
   }
   #services .content-box  .box p{
     margin-top: 0.8rem;
+  }
+  .use-cases .cards-grid {
+  grid-template-columns: repeat(1, 1fr);
+  max-width: 1400px;
   }
 .use-cases h2 {
 font-size: 2rem;
