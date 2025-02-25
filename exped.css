@@ -1825,10 +1825,28 @@ grid-template-columns: repeat(2, 1fr);
     align-items: center;
 }
 
-.card {
+.discover .card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.discover .cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+    /* background-color: var(--bg-secondary); */
+}
+
+
+
+.discover .card {
     width: 100%; /* Full width on mobile */
-    max-width: 400px;
     margin-bottom: 1rem;
+    width: 600px;
 }
 .discover-content h2 {
     font-size: 2rem;
@@ -1840,8 +1858,6 @@ grid-template-columns: repeat(2, 1fr);
 .step-card {
         flex: 0 0 50%;
     }
-
-
 
 #services .content-box{
     padding: 40px ;
